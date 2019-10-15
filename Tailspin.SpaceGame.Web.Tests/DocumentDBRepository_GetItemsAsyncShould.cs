@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+
 using System.IO;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using TailSpin.SpaceGame.Web;
 using TailSpin.SpaceGame.Web.Models;
+
 
 namespace Tests
 {
@@ -18,6 +20,7 @@ namespace Tests
         {
             using (Stream scoresData = typeof(IDocumentDBRepository<Score>)
                 .Assembly
+
                 .GetManifestResourceStream("Tailspin.SpaceGame.Web.SampleData.scores.json"))
             {
                 _scoreRepository = new LocalDocumentDBRepository<Score>(scoresData);
